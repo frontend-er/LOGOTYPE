@@ -121,11 +121,6 @@ body.lock {
 
 .contacts-header__column {
   padding: 0 30px;
-  border-left: 1px solid white;
-}
-
-.contacts-header__column:first-child {
-  border: 0;
 }
 
 .contacts-header__item_icon {
@@ -265,7 +260,7 @@ body.lock {
   width: 43px;
   height: 43px;
   display: inline-block;
-  background: url(../img/icons/header/cart.png) left no-repeat;
+  background: url(../img/icons/header/cart.png) 0 0/100% no-repeat;
   position: relative;
 }
 
@@ -284,13 +279,20 @@ body.lock {
 
 @media (min-width: 767.98px) {
   .top-header__column__logo {
-    flex: 0 0 100px;
     align-self: flex-start;
     padding: 25px 0px 0px 19px;
   }
 }
 
 @media (min-width: 911.98px) {
+  .contacts-header__column {
+    border-left: 1px solid white;
+  }
+
+  .contacts-header__column:first-child {
+    border: 0;
+  }
+
   .actions-header__item:hover {
     color: #1cb9ce;
   }
@@ -394,11 +396,13 @@ body.lock {
   }
 
   .menu__body {
-    display: none;
+    opacity: 0;
     position: fixed;
     height: 100%;
     width: 100%;
     top: -100%;
+    visibility: hidden;
+    transition: all 0.4s ease 0s;
     left: 0;
     overflow: auto;
     background-color: #fff;
@@ -420,6 +424,8 @@ body.lock {
   .menu__body._active {
     top: 0;
     display: block;
+    opacity: 1;
+    visibility: visible;
   }
 
   .menu__list {
@@ -447,7 +453,7 @@ body.lock {
     justify-content: flex-end;
   }
 
-  .contacts-header__column:last-child {
+  .contacts-header__item_second-phone {
     display: none;
   }
 
@@ -473,12 +479,20 @@ body.lock {
 }
 
 @media (max-width: 767.98px) {
+  ._container {
+    padding: 0 10px;
+  }
+
   .header {
     background: url("../img/bg-header1920.png") 0 -20px no-repeat;
   }
 
   .top-header__content {
     height: 70px;
+  }
+
+  .top-header__column__logo {
+    flex: 0 0 100px;
   }
 
   .top-header__logo {
@@ -491,6 +505,14 @@ body.lock {
 }
 
 @media (max-width: 640px) {
+  .top-header__logo {
+    width: 90px;
+  }
+
+  .contacts-header {
+    align-items: center;
+  }
+
   .contacts-header__column {
     padding: 0;
   }
@@ -509,12 +531,24 @@ body.lock {
     font-size: 0;
     width: 19px;
     height: 25px;
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
+    margin: 0px 10px 0px 0px;
   }
 
   .actions-header {
     justify-content: space-between;
     margin: 0px 0px 15px 0px;
+  }
+
+  .info-header__cart {
+    width: 40px;
+    height: 40px;
+  }
+
+  .info-header__cart span {
+    font-size: 14px;
+    padding: 0px 5px;
+    line-height: 20px;
+    right: -5px;
   }
 }
