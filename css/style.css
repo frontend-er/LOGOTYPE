@@ -567,6 +567,125 @@ body.lock {
   font-weight: 900;
 }
 
+.search-page {
+  display: flex;
+  position: relative;
+}
+
+.search-page__select {
+  cursor: pointer;
+  display: flex;
+  padding: 0px 14px;
+  background-color: #f3f3f3;
+  align-items: center;
+  align-items: center;
+}
+
+.search-page__select::before {
+  content: '';
+  width: 17px;
+  height: 17px;
+  background: url("../img/icons/menu_page/search-icon.png") 0 0 no-repeat;
+}
+
+.search-page__select::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: url("../img/icons/menu_page/arrow-down.png") 0 0 no-repeat;
+}
+
+.search-page__select span {
+  margin: 0px 13px;
+  color: #666666;
+  font-weight: 300;
+  border-bottom: 1px dashed;
+}
+
+.search-page__title {
+  display: flex;
+  align-items: center;
+}
+
+.search-page__categores {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.search-page__input {
+  flex: 1 1 auto;
+  border-top: 2px solid #f2f2f2;
+  border-bottom: 2px solid #f2f2f2;
+}
+
+.search-page__input input {
+  outline: none;
+  height: 37px;
+  border: none;
+  border-radius: 0 !important;
+  width: 100%;
+  display: block;
+  padding: 0px 20px;
+}
+
+.search-page__btn {
+  display: inline-flex;
+  pad: 0px 25px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+  height: 39px;
+  background-color: #f68038;
+  outline: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900px;
+  line-height: 18px;
+  text-transform: uppercase;
+  border: 2px solid #ff8a42;
+  width: 70px;
+  right: 0;
+  margin-right: 20px;
+}
+
+.categores-search {
+  background-color: #fff;
+  display: flex;
+}
+
+.categores-search ul {
+  padding: 0;
+}
+
+.categores-search__column {
+  flex: 0 1 33.333%;
+  padding: 27px 40px;
+  border-right: 1px solid #f3f3f3;
+}
+
+.categores-search__column:last-child {
+  border: 0;
+}
+
+.categores-search__list li {
+  margin: 0px 0px 20px 0px;
+  list-style-type: none;
+}
+
+.categores-search__list li:last-child {
+  margin: 0px 0px 0px 0px;
+}
+
+.categores-search__list li a {
+  text-decoration: none;
+}
+
+.categores-search__link {
+  color: #969696;
+}
+
 @media (min-width: 767.98px) {
   .top-header__column__logo {
     align-self: flex-start;
@@ -598,6 +717,12 @@ body.lock {
 
   .item-product__title:hover {
     text-decoration: underline;
+  }
+}
+
+@media (min-width: 992px) {
+  .search-page__btn:hover {
+    background-color: #91481c;
   }
 }
 
