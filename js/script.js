@@ -162,8 +162,8 @@ da.init();
 
 
 //Burger 
-$(document).ready(function() {
-	$('.menu__icon').click(function(event) {
+$(document).ready(function () {
+	$('.menu__icon').click(function (event) {
 		$('.menu__icon,.menu__body').toggleClass('_active');
 		$('body').toggleClass('.lock');
 	});
@@ -177,18 +177,44 @@ let menuParents = document.querySelectorAll('.menu-page__parent');
 
 for (let index = 0; index < menuParents.length; index++) {
 	const menuParent = menuParents[index];
-	menuParent.addEventListener("mouseenter", function(e) {
+	menuParent.addEventListener("mouseenter", function (e) {
 		menuParent.classList.add('_active');
 	});
-	menuParent.addEventListener("mouseleave", function(e) {
+	menuParent.addEventListener("mouseleave", function (e) {
 		menuParent.classList.remove('_active');
 	});
 }
 
 let menuPageBurger = document.querySelector('.menu-page__burger');
-let  menuPageBody = document.querySelector('.menu-page__body');
+let menuPageBody = document.querySelector('.menu-page__body');
 
-menuPageBurger.addEventListener("click", function(e) {
+menuPageBurger.addEventListener("click", function (e) {
 	menuPageBurger.classList.toggle('_active');
 	menuPageBody.classList.toggle('_active');
 });
+
+
+let serchSelect = document.querySelector('.search-page__select');
+let categoriesSearch = document.querySelector('.categores-search');
+
+serchSelect.addEventListener("click", function (e) {
+	categoriesSearch.classList.toggle('_active');
+	serchSelect.classList.toggle('_active');
+})
+
+let checkboxCategories = document.querySelector('.categores-search__checkbox');
+
+for (let index = 0; index < checkboxCategories.length; index++) {
+	const checkboxCategoriy = checkboxCategories[index];
+	checkboxCategoriy.addEventListener("change", function (e) {
+		checkboxCategoriy.classList.toggle('_active');
+
+		let checkboxActiveCategories = document.querySelectorAll('.categores-search__checkbox._active');
+
+		if (checkboxActiveCategories.length > 0) {
+			serchSelect.classList.add('_catigories');
+		} else {
+			serchSelect.classList.remove('_catigories');
+		}
+	});
+}

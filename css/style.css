@@ -630,21 +630,25 @@ body.lock {
 
 .search-page__select::after {
   content: "";
+  transition: all 0.5s ease 0s;
   width: 10px;
   height: 10px;
   background: url("../img/icons/menu_page/arrow-down.png") 0 0 no-repeat;
 }
 
-.search-page__title {
-  display: flex;
-  align-items: center;
+.search-page__select._active::after {
+  transform: rotate(-180deg);
 }
 
-.search-page__title > span {
+.search-page__title {
   margin: 0px 13px;
   color: #666666;
   font-weight: 300;
   border-bottom: 1px dashed;
+}
+
+.search-page__title span:last-child {
+  display: none;
 }
 
 .search-page__categores {
@@ -689,8 +693,8 @@ body.lock {
 }
 
 .categores-search {
+  display: none;
   background-color: #fff;
-  display: flex;
   border: 1px solid #f3f3f3;
 }
 
@@ -702,6 +706,14 @@ body.lock {
   bottom: 0;
   width: 100%;
   left: 0;
+}
+
+.categores-search__row {
+  display: flex;
+}
+
+.categores-search._active {
+  display: block;
 }
 
 .categores-search ul {
