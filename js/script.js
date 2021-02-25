@@ -4,8 +4,8 @@
 // Andrikanych Yevhen 2020
 // https://www.youtube.com/c/freelancerlifestyle
 
-"use strict";
 
+"use strict";
 function DynamicAdapt(type) {
 	this.type = type;
 }
@@ -224,7 +224,7 @@ for (let index = 0; index < checkboxCategories.length; index++) {
 //===================SLIDER ===================================================================================================//
 
 
-
+/*
 let sliders = document.querySelectorAll('._swiper');
 if (sliders) {
 	for (let index = 0; index < sliders.length; index++) {
@@ -254,12 +254,15 @@ if (sliders) {
 
 function slider_bild_callback(params) { };
 
+*/
+let mainslider = new Swiper (".swiper-container");
 
-let mainslider = new Swiper ('.mainslider__body', {
+/*
+
+{
 
 //},
-observer: true,
-observerParents: true,
+
 sliderPerView: 1,
 spaceBetween: 0, 
 autoHeight: true,
@@ -277,6 +280,8 @@ navigation: {
 	prevEl: '.about__more .more__item_prev',
 },
 */
+
+/*
 on: {
 	lazyImageReady: function () {
 		ibg();
@@ -284,4 +289,4 @@ on: {
 }
 
 
-});
+*/
