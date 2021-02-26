@@ -333,15 +333,19 @@ body.lock {
 
 .page__side {
   flex: 0 0 260px;
+  position: relative;
+  z-index: 3;
 }
 
 .page__content {
+  min-width: 0;
   flex: 1 1 auto;
   padding: 0px 0px 0px 30px;
 }
 
 .page__search {
   margin: 0px 0px 22px 0px;
+  z-index: 2;
 }
 
 .page__slider {
@@ -456,6 +460,10 @@ body.lock {
   background: url("../img/icons/menu_page/arrow.png") 0 0 no-repeat;
 }
 
+.menu-page__parent._active .menu-page__submenu {
+  pointer-events: all;
+}
+
 .menu-page__parent._active .submenu-page__item {
   z-index: 3;
   transform: translate(0px, 0px);
@@ -482,6 +490,7 @@ body.lock {
   left: 100%;
   height: 100%;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .submenu-page__item {
@@ -786,10 +795,48 @@ body.lock {
   height: 100%;
   top: 0;
   left: 0;
+  z-index: 1;
+}
+
+.mainslider__dots {
+  position: relative;
+  z-index: 1000;
+  margin: -27.5px 23px 0px 23px;
+  display: flex;
+  justify-content: center;
+  counter-reset: item;
+}
+
+.mainslider__dots .swiper-pagination-bullets {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid  #000;
+  background-color: #000;
+}
+
+.mainslider__dots .swiper-pagination-bullets:after {
+  font-size: 16px;
+  font-weight: 900;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff8a42;
+  counter-increment: item;
+  content: counter(item);
 }
 
 .content-mainslider {
-  padding: 20px 35px;
+  padding: 20px 35px 60px 35px;
+}
+
+.content-mainslider a {
+  text-decoration: none;
 }
 
 .content-mainslider__title {
@@ -804,6 +851,37 @@ body.lock {
 .content-mainslider__title span {
   color: #f68038;
   display: block;
+}
+
+.content-mainslider__footer {
+  padding: 15px 0px 0px 0px;
+  text-align: center;
+}
+
+.content-mainslider__price {
+  margin: 0px 0px 24px 0px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 24px;
+}
+
+.content-mainslider__button {
+  width: 33px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 30px;
+}
+
+.content-mainslider__button span {
+  border-radius: 15px;
+  border: 3px solid white;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  padding: 0px 30px 0px 9px;
+  background: url("../img/icons/menu_page/arrow.png") right no-repeat;
 }
 
 .text-mainslider {

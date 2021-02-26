@@ -255,18 +255,17 @@ if (sliders) {
 function slider_bild_callback(params) { };
 
 */
-let mainslider = new Swiper (".swiper-container");
+let mainslider = new Swiper (".mainslider__body", {
 
-/*
-
-{
 
 //},
-
+observer:true, 
+observerParents: true,
 sliderPerView: 1,
 spaceBetween: 0, 
 autoHeight: true,
 speed: 800,
+loop: true,
 
 pagination : {
 	el: '.mainslider__dots',
@@ -281,12 +280,12 @@ navigation: {
 },
 */
 
-/*
+
 on: {
 	lazyImageReady: function () {
 		ibg();
 	},
 }
 
+});
 
-*/
