@@ -6,6 +6,35 @@
 
 
 "use strict";
+var ua = window.navigator.userAgent;
+var msie = ua.indexOf("MISE ");
+var isMobile = {
+	Android: function () {
+		return navigator.userAgent.match(/Android/i);
+	},
+	BlackBerry: function () {
+		return navigator.userAgent.match(/BlackBerry/i);
+	},
+	iOS: function () {
+		return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+	},
+	Opera: function () {
+		return navigator.userAgent.match(/Opera Mini/i);
+	},
+	Windows: function () {
+		return navigator.userAgent.match(/IEMobile/i);
+	},
+	any: function () {
+		return (
+			isMobile.Android() ||
+			isMobile.BlackBerry() ||
+			isMobile.iOS() ||
+			isMobile.Opera() ||
+			isMobile.Windows()
+		);
+	}
+};
+
 function DynamicAdapt(type) {
 	this.type = type;
 }
@@ -173,16 +202,31 @@ $(document).ready(function () {
 
 //menu - items - product
 
-let menuParents = document.querySelectorAll('.menu-page__parent');
 
-for (let index = 0; index < menuParents.length; index++) {
-	const menuParent = menuParents[index];
-	menuParent.addEventListener("mouseenter", function (e) {
-		menuParent.classList.add('_active');
-	});
-	menuParent.addEventListener("mouseleave", function (e) {
-		menuParent.classList.remove('_active');
-	});
+if (isMobile.any()) {
+	let menuParents = document.querySelectorAll('.menu-page__parent>a');
+	for (let index = 0; index < menuParents.length; index++) {
+		const menuParent = menuParents[index];
+		menuParent.addEventListener("click", function (e)  {
+			menuParent.parentElement.classList.toggle('_active');
+			e.preventDefault();
+		});
+
+	}
+} else {
+
+
+	let menuParents = document.querySelectorAll('.menu-page__parent');
+
+	for (let index = 0; index < menuParents.length; index++) {
+		const menuParent = menuParents[index];
+		menuParent.addEventListener("mouseenter", function (e) {
+			menuParent.classList.add('_active');
+		});
+		menuParent.addEventListener("mouseleave", function (e) {
+			menuParent.classList.remove('_active');
+		});
+	}
 }
 
 let menuPageBurger = document.querySelector('.menu-page__burger');
@@ -295,7 +339,7 @@ if (document.querySelector('.mainslider')) {
 
 	for (let index = 0; index < mainsliderImages.length; index++) {
 		const mainsliderImage = mainsliderImages[index].querySelector('img').getAttribute('src');
-		mainsliderDotts[index].style.backgroundImage = "url('"+ mainsliderImage + "')";
+		mainsliderDotts[index].style.backgroundImage = "url('" + mainsliderImage + "')";
 	}
 }
 
