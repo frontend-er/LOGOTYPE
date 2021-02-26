@@ -254,38 +254,50 @@ if (sliders) {
 
 function slider_bild_callback(params) { };
 
-*/
-let mainslider = new Swiper (".mainslider__body", {
 
-
-//},
-observer:true, 
-observerParents: true,
-sliderPerView: 1,
-spaceBetween: 0, 
-autoHeight: true,
-speed: 800,
-loop: true,
-
-pagination : {
-	el: '.mainslider__dots',
-	clikable: true,
-
-},
-
-/*
-navigation: {
-	nextEl: '.about__more .more__item_next',
-	prevEl: '.about__more .more__item_prev',
-},
 */
 
+if (document.querySelector('.mainslider')) {
+	let mainslider = new Swiper(".swiper-container", {
 
-on: {
-	lazyImageReady: function () {
-		ibg();
-	},
+
+		//},
+		observer: true,
+		observerParents: true,
+		sliderPerView: 1,
+		spaceBetween: 0,
+		autoHeight: true,
+		speed: 800,
+
+		pagination: {
+			el: '.mainslider__dots',
+			clikable: true,
+
+		},
+
+		/*
+		navigation: {
+			nextEl: '.about__more .more__item_next',
+			prevEl: '.about__more .more__item_prev',
+		},
+		*/
+
+
+		on: {
+			lazyImageReady: function () {
+				ibg();
+			},
+		}
+
+	});
+	let mainsliderImages = document.querySelectorAll('.mainslider__image');
+	let mainsliderDotts = document.querySelectorAll('.mainslider__dots .swiper-pagination-bullet');
+
+	for (let index = 0; index < mainsliderImages.length; index++) {
+		const mainsliderImage = mainsliderImages[index].querySelector('img').getAttribute('src');
+		mainsliderDotts[index].style.backgroundImage = "url('"+ mainsliderImage + "')";
+	}
 }
 
-});
+
 

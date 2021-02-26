@@ -801,21 +801,31 @@ body.lock {
 .mainslider__dots {
   position: relative;
   z-index: 1000;
-  margin: -27.5px 23px 0px 23px;
+  margin: -37.5px 0px 0px 0px;
   display: flex;
   justify-content: center;
   counter-reset: item;
 }
 
-.mainslider__dots .swiper-pagination-bullets {
+.mainslider__dots .swiper-pagination-bullet {
+  cursor: pointer;
+  margin: 0px 23px;
   width: 55px;
   height: 55px;
+  overflow: hidden;
   border-radius: 50%;
-  border: 2px solid  #000;
-  background-color: #000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  border: 2px solid white;
+  opacity: 1;
 }
 
-.mainslider__dots .swiper-pagination-bullets:after {
+.mainslider__dots .swiper-pagination-bullet::after {
+  opacity: 0;
+  transition: 0.4s all ease 0s;
+  color: #fff;
   font-size: 16px;
   font-weight: 900;
   position: absolute;
@@ -829,6 +839,20 @@ body.lock {
   background-color: #ff8a42;
   counter-increment: item;
   content: counter(item);
+}
+
+.mainslider__dots .swiper-pagination-bullet-active {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid  #fff;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.mainslider__dots .swiper-pagination-bullet-active::after {
+  opacity: 1;
 }
 
 .content-mainslider {
