@@ -302,7 +302,7 @@ function slider_bild_callback(params) { };
 */
 
 if (document.querySelector('.mainslider')) {
-	let mainslider = new Swiper(".swiper-container", {
+	let mainslider = new Swiper(".mainslider__body", {
 
 
 		//},
@@ -345,3 +345,33 @@ if (document.querySelector('.mainslider')) {
 
 
 
+if (document.querySelector('.products-slider')) {
+	let mainslider = new Swiper(".products-slider__item", {
+
+
+		//},
+		observer: true,
+		observerParents: true,
+		sliderPerView: 1,
+		spaceBetween: 0,
+		autoHeight: true,
+		speed: 800,
+
+
+
+		
+		navigation: {
+			nextEl: '.aproducts-slider__arrow_next',
+			prevEl: '.products-slider__arrow_prev',
+		},
+		
+
+
+		on: {
+			lazyImageReady: function () {
+				ibg();
+			},
+		}
+
+	});
+}
