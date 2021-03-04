@@ -346,22 +346,29 @@ if (document.querySelector('.mainslider')) {
 
 
 if (document.querySelector('.products-slider')) {
-	let mainslider = new Swiper(".products-slider__item", {
+	let productSlider = new Swiper(".products-slider", {
 
 
 		//},
+		
 		observer: true,
 		observerParents: true,
 		sliderPerView: 1,
 		spaceBetween: 0,
 		autoHeight: true,
 		speed: 800,
+		disabledClass: false,
+
+		pagination: {
+			el: '.products-slider__info',
+			type: 'fraction',
+		  },
 
 
 
 		
 		navigation: {
-			nextEl: '.aproducts-slider__arrow_next',
+			nextEl: '.products-slider__arrow_next',
 			prevEl: '.products-slider__arrow_prev',
 		},
 		

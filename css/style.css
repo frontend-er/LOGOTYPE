@@ -684,8 +684,9 @@ body.lock {
   font-weight: 900;
 }
 
-.hover-item-product__options {
+.hover-item-product__body {
   flex: 1 1 auto;
+  padding: 10px 0px 0px 0px;
 }
 
 .hover-item-product__cart {
@@ -693,6 +694,7 @@ body.lock {
   width: 57px;
   height: 57px;
   margin: 0px auto 25px auto;
+  display: block;
 }
 
 .hover-item-product__footer {
@@ -1179,7 +1181,6 @@ body.lock {
 }
 
 .products-slider__header {
-  display: flex;
   margin: 0px 0px 30px 0px;
 }
 
@@ -1193,10 +1194,49 @@ body.lock {
   letter-spacing: 0.75px;
 }
 
+.products-slider__control {
+  display: flex;
+  align-items: center;
+  width: 130px;
+}
+
+.products-slider__arrow {
+  background: url("../img/icons/header/right-arrow.svg") 0 0 no-repeat;
+  width: 33px;
+  height: 30px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.products-slider__arrow_prev {
+  transform: rotate(-180deg);
+}
+
+.products-slider__info {
+  color: #999999;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 500;
+  padding: 0px 10px;
+}
+
+.products-slider__info .swiper-pagination-current {
+  font-weight: 900;
+  color: #000;
+  font-size: 18px;
+}
+
 @media (min-width: 767.98px) {
   .top-header__column__logo {
     align-self: flex-start;
     padding: 25px 0px 0px 19px;
+  }
+
+  .products-slider__header {
+    display: flex;
+  }
+
+  .products-slider__title {
+    margin: 0px 0px 15px 0px;
   }
 }
 
@@ -1298,6 +1338,21 @@ body.lock {
 
   .reviews-side__item:hover .reviews-side__body::before {
     color: #71c7d3;
+  }
+
+  .products-slider__arrow:hover {
+    background: url("../img/icons/header/left-arrow.svg") 0 0 no-repeat;
+  }
+
+  .products-slider__arrow_prev:hover {
+    transform: rotate(0deg);
+  }
+
+  .products-slider__arrow_next:hover {
+    transform: rotate(-180deg);
+    width: 33px;
+    height: 30px;
+    width: 100%;
   }
 }
 
@@ -1542,6 +1597,12 @@ body.lock {
   }
 }
 
+@media (max-width: 840px) {
+  .items-products__column {
+    flex: 1 1 50%;
+  }
+}
+
 @media (max-width: 767.98px) {
   ._container {
     padding: 0 10px;
@@ -1631,5 +1692,17 @@ body.lock {
   .page {
     padding: 85px 0px 0px 0px;
     z-index: 100;
+  }
+}
+
+@media (max-width: 600px) {
+  .items-products__column {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 1192px) and (min-width: 911.98px) {
+  .items-products__column {
+    flex: 1 1 50%;
   }
 }
