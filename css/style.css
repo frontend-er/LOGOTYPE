@@ -540,17 +540,23 @@ body.lock {
 .items-products {
   display: flex;
   margin: 0px -15px;
+  flex-wrap: wrap;
 }
 
 .items-products__column {
   flex: 0 1 33.333%;
   padding: 0px 15px;
+  margin: 0px 0px 25px 0px;
 }
 
 .item-product {
   padding: 15px;
   position: relative;
+  overflow: hidden;
+  height: 100%;
   border: 1px solid #f5f5f5;
+  display: flex;
+  flex-direction: column;
 }
 
 .item-product__lables {
@@ -574,7 +580,7 @@ body.lock {
 }
 
 .item-product__image {
-  height: 195px;
+  height: 260px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -583,7 +589,7 @@ body.lock {
 
 .item-product__image img {
   max-width: 100%;
-  max-height: 175px;
+  max-height: 240px;
 }
 
 .item-product__title {
@@ -594,6 +600,8 @@ body.lock {
   display: inline-block;
   margin: 0px 0px 5px 0px;
   text-decoration: none;
+  flex: 1 1 auto;
+  transition: all 0.5s ease 0s;
 }
 
 .item-product__title span {
@@ -602,9 +610,13 @@ body.lock {
 
 .item-product__body {
   padding: 0px 10px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .item-product__footer {
+  transition: all 0.5s ease 0s;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -646,6 +658,8 @@ body.lock {
   height: 100%;
   top: 0;
   left: 0;
+  transition: transform 0.5s ease 0s;
+  transform: translate(-101%, 0px);
 }
 
 .hover-item-product {
@@ -657,8 +671,28 @@ body.lock {
   color: #fff;
 }
 
+.hover-item-product__title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #c2c2c2;
+  margin: 0px 0px 25px 0px;
+}
+
+.hover-item-product__title span {
+  display: block;
+  font-weight: 900;
+}
+
 .hover-item-product__options {
   flex: 1 1 auto;
+}
+
+.hover-item-product__cart {
+  background: url("../img/icons/menu_page/cart-orange.png") 0 0 no-repeat;
+  width: 57px;
+  height: 57px;
+  margin: 0px auto 25px auto;
 }
 
 .hover-item-product__footer {
@@ -702,6 +736,19 @@ body.lock {
 
 .hover-item-product__price::after {
   font-size: 18px;
+}
+
+.options-item-product__item {
+  margin: 0px 0px 10px 0px;
+}
+
+.options-item-product__label {
+  margin: 0px 0px 3px 0px;
+}
+
+.options-item-product__value {
+  color: #f68038;
+  font-weight: 900;
 }
 
 .search-page {
@@ -1216,6 +1263,15 @@ body.lock {
 
   .item-product__title:hover {
     text-decoration: underline;
+  }
+
+  .item-product:hover .item-product__hover {
+    transform: translate(0px, 0px);
+  }
+
+  .item-product:hover .item-product__title,
+  .item-product:hover .item-product__footer {
+    opacity: 0;
   }
 
   .news-side__title:hover {
