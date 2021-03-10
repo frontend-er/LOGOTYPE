@@ -393,27 +393,34 @@ if (document.querySelector('.brands-slider__container')) {
 		observerParents: true,
 		slidesPerView: 5,
       	spaceBetween: 0,
-		autoHeight: true,
+		//autoHeight: true,
 		speed: 800,
 		disabledClass: false,
 		loop: true,
-		
 
-
-
-		
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+				autoHeight: true,
+			},
+			480: {
+				slidesPerView: 2,
+			},
+			600: {
+				slidesPerView: 3,
+			},
+			768: {
+				slidesPerView: 4,
+			},
+			920: {
+				slidesPerView: 5,
+			},
+		},
 		navigation: {
 			nextEl: '.brands-slider__arrow_next',
 			prevEl: '.brands-slider__arrow_prev',
 		},
-		
-
-
-		on: {
-			lazyImageReady: function () {
-				ibg();
-			},
-		}
+	
 
 	});
 }
