@@ -383,6 +383,10 @@ body.lock {
   margin: 0px 0px 35px 0px;
 }
 
+.page__info-menu {
+  margin: 0px 0px 38px 0px;
+}
+
 .menu-page {
   position: relative;
   background: url("../img/bg_menu.png") top repeat;
@@ -1382,8 +1386,6 @@ body.lock {
 
 .info-menu__list {
   padding: 0;
-  display: flex;
-  align-items: center;
 }
 
 .info-menu__list li {
@@ -1395,6 +1397,125 @@ body.lock {
   color: #1aa7b9;
   font-size: 12px;
   font-weight: 300;
+}
+
+.footer__body {
+  display: flex;
+  margin: 0px -15px;
+}
+
+.footer__column {
+  padding: 0px 15px;
+  flex: 0 1 50%;
+  margin: 0px 0px 20px 0px;
+}
+
+.footer__column:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__block {
+  display: flex;
+  flex: 1 1 auto;
+  padding: 0px 0px 0px 0px;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  border-top: 3px dashed #dadada;
+}
+
+.footer__copy {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  flex: 1 1 auto;
+  font-size: 12px;
+  font-weight: 300;
+  color: #dadadd;
+}
+
+.block-footer {
+  padding: 0;
+}
+
+.block-footer__column:first-child {
+  flex: 0 0 165px;
+}
+
+.block-footer__column:last-child {
+  padding: 0px 0px 0px 45px;
+  flex: 1 1 auto;
+}
+
+.block-footer__phones {
+  background: url(../img/icons/header/blluePhone.png) left no-repeat;
+  padding: 0px 0px 0px 35px;
+}
+
+.block-footer__phones p {
+  margin: 0px 0px 5px 0px;
+}
+
+.block-footer__phones p:last-child {
+  margin: 0px 0px 0px 0px;
+}
+
+.block-footer__phone {
+  color: #333;
+  font-weight: 900;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.logo-footer {
+  display: inline-block;
+  margin: 0px 0px 10px 0px;
+}
+
+.delivery-footer__title {
+  color: #858585;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.35px;
+  margin: 0px 0px 10px 0px;
+}
+
+.delivery-footer__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0px -15px;
+  align-items: center;
+}
+
+.delivery-footer__item {
+  padding: 3px 15px;
+}
+
+.wigets-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px -15px;
+}
+
+.wigets-footer__column {
+  padding: 0px 15px;
+}
+
+.wigets-footer__column img {
+  max-width: 100%;
+}
+
+.social-footer {
+  display: flex;
+  align-items: center;
+}
+
+.social-footer__items {
+  margin: 0px 0px 0px 10px;
 }
 
 @media (min-width: 767.98px) {
@@ -1409,6 +1530,11 @@ body.lock {
 
   .products-slider__title {
     margin: 0px 0px 15px 0px;
+  }
+
+  .info-menu__list {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -1854,6 +1980,28 @@ body.lock {
 
   .search-page__select {
     display: none;
+  }
+
+  .text-block__container {
+    padding: 0;
+  }
+
+  .info-menu__body {
+    display: flex;
+  }
+
+  .info-menu__line {
+    display: block;
+    flex: 0 1 50%;
+    border: 0;
+  }
+
+  .info-menu__label {
+    margin: 0px 0px 10px 0px;
+  }
+
+  .info-menu__list li {
+    margin: 0px 0px 10px 0px;
   }
 }
 
