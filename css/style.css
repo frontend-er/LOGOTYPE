@@ -1399,14 +1399,7 @@ body.lock {
   font-weight: 300;
 }
 
-.footer__body {
-  display: flex;
-  margin: 0px -15px;
-}
-
 .footer__column {
-  padding: 0px 15px;
-  flex: 0 1 50%;
   margin: 0px 0px 20px 0px;
 }
 
@@ -1422,7 +1415,7 @@ body.lock {
 }
 
 .footer__bottom {
-  display: flex;
+  text-align: center;
   align-items: center;
   padding: 10px 0px;
   border-top: 3px dashed #dadada;
@@ -1437,7 +1430,8 @@ body.lock {
 }
 
 .block-footer {
-  padding: 0;
+  padding: 0px 0px 20px 0px;
+  text-align: center;
 }
 
 .block-footer__column:first-child {
@@ -1445,13 +1439,11 @@ body.lock {
 }
 
 .block-footer__column:last-child {
-  padding: 0px 0px 0px 45px;
   flex: 1 1 auto;
 }
 
 .block-footer__phones {
-  background: url(../img/icons/header/blluePhone.png) left no-repeat;
-  padding: 0px 0px 0px 35px;
+  padding: 0px 0px 0px 15px;
 }
 
 .block-footer__phones p {
@@ -1466,6 +1458,10 @@ body.lock {
   color: #333;
   font-weight: 900;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.block-footer__delivery {
+  padding: 15px;
 }
 
 .logo-footer {
@@ -1486,7 +1482,6 @@ body.lock {
 .delivery-footer__items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 0px -15px;
   align-items: center;
 }
@@ -1497,7 +1492,6 @@ body.lock {
 
 .wigets-footer {
   display: flex;
-  justify-content: flex-end;
   margin: 0px -15px;
 }
 
@@ -1516,6 +1510,32 @@ body.lock {
 
 .social-footer__items {
   margin: 0px 0px 0px 10px;
+}
+
+.footer__payments img {
+  max-width: 100%;
+}
+
+@media (min-width: 560px) {
+  .footer__bottom {
+    display: flex;
+    text-align: left;
+  }
+
+  .footer__copy {
+    margin: 0px 0px 10px 0px;
+  }
+
+  .block-footer {
+    text-align: left;
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  .block-footer__phones {
+    background: url(../img/icons/header/blluePhone.png) left no-repeat;
+    padding: 0px 0px 0px 35px;
+  }
 }
 
 @media (min-width: 767.98px) {
@@ -1683,6 +1703,20 @@ body.lock {
 
   .info-menu__link:hover {
     color: #333;
+  }
+
+  .footer__body {
+    display: flex;
+    margin: 0px -15px;
+  }
+
+  .footer__column {
+    padding: 0px 15px;
+    flex: 0 1 50%;
+  }
+
+  .wigets-footer {
+    justify-content: flex-end;
   }
 }
 
@@ -2066,6 +2100,33 @@ body.lock {
 @media (max-width: 600px) {
   .items-products__column {
     flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .delivery-footer {
+    text-align: center;
+  }
+
+  .delivery-footer__items {
+    justify-content: center;
+  }
+
+  .wigets-footer {
+    display: block;
+    text-align: center;
+  }
+
+  .social-footer {
+    justify-content: center;
+  }
+
+  .social-footer__items {
+    margin: 0px 5px;
+  }
+
+  .footer__payments {
+    text-align: center;
   }
 }
 
