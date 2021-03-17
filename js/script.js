@@ -3124,16 +3124,16 @@ if (document.querySelector('.brands-slider__container')) {
 //======================================================================================================
 
 
-let priceSlider = document.querySelector('.price-filter');
+let priceSlider = document.querySelector('.price-filter__slider');
 
 
 
 noUiSlider.create(priceSlider, {
     start: [20, 80],
-	//tooltips: [false, wNumb({decimals:1}), true],
+	tooltips: [true, true],
     connect: true,
     range: {
         'min': 0,
-        'max': 100
+        'max': 200000
     }
 });
