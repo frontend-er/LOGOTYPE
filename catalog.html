@@ -275,7 +275,7 @@
                     </nav>
                     <div class="filter">
                         <div class="filter__title">Фильтр товаров</div>
-                        <div class="filter__body">
+                        <div class="filter__body _spollers">
                             <div class="filter__section section-filter">
                                 <div class="section-filter__title"> Цена (леи.): </div>
                                 <div class="section-filter__body">
@@ -285,21 +285,56 @@
                                             <div class="values-price-filter__column">
                                                 <div class="values-price-filter__lablel">от</div>
                                                 <div class="values-price-filter__input">
-                                                    <input type="text" autocomplete="off" name="form[]" class="input">
+                                                    <input id="price__start" type="text" autocomplete="off"
+                                                        name="form[]" class="input">
                                                 </div>
-                                            <div class="values-price-filter__column">
-                                                <div class="values-price-filter__lablel">до</div>
-                                                <div class="values-price-filter__input">
-                                                    <input type="text" autocomplete="off" name="form[]" class="input">
+                                                <div class="values-price-filter__column">
+                                                    <div class="values-price-filter__lablel">до</div>
+                                                    <div class="values-price-filter__input">
+                                                        <input id="price__end" type="text" autocomplete="off"
+                                                            name="form[]" class="input">
+                                                    </div>
                                                 </div>
-                                            </div>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="filter__section section-filter">
+                                <div class="section-filter__title"> Товары для стравнения </div>
+                                <div class="section-filter__body">
+                                    <div class="compare-filter">
+                                        <div class="compare-filter__items">
+                                            <div class="compare-filter__item">
+                                                <a href="" class="compare-filter__link">Norditrack 234x2345</a>
+                                                <a href="" class="compare-filter__remove"></a>
+                                            </div>
+                                            <div class="compare-filter__item">
+                                                <a href="" class="compare-filter__link">FrireWall 234x2345</a>
+                                                <a href="" class="compare-filter__remove"></a>
+                                            </div>
+                                            <div class="compare-filter__item">
+                                                <a href="" class="compare-filter__link">AntElips Fit 234x2345</a>
+                                                <a href="" class="compare-filter__remove"></a>
+                                            </div>
+
+                                        </div>
+                                        <div class="compare-filter__footer">
+                                            <a href="" class="compare-filter__botton"><span>Сравнить</span></a>
+                                            <a href="" class="compare-filter__clean"></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter__section section-filter">
+                                <div class="section-filter__title _spoller"> Производитель </div>
+                                <div class="section-filter__body">
+                                </div>
+                            </div>
+
                         </div>
-                    </div>
 
 
                 </aside>

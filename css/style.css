@@ -39,7 +39,7 @@
 }
 
 .section-filter {
-  padding: 30px 15px;
+  padding: 20px 15px;
   border-bottom: 1px solid #77c9d4;
 }
 
@@ -53,6 +53,22 @@
   min-height: 30px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.section-filter__title._spoller {
+  cursor: pointer;
+}
+
+.section-filter__title._spoller::after {
+  content: '';
+  flex: 0 0 30px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #72c9d4;
+  background-color: #fff;
+  background: url("../img/icons/menu_page/text-arrow.png") center no-repeat;
 }
 
 .price-filter__slider {
@@ -168,6 +184,77 @@
   width: 60px;
   height: 25px;
   border: 1px solid #eaeaea;
+}
+
+.compare-filter__items {
+  padding: 0px 13px 0px 0px;
+  margin: 0px 0px 20px 0px;
+}
+
+.compare-filter__item {
+  display: flex;
+  margin: 0px 0px 10px 0px;
+  justify-content: space-between;
+}
+
+.compare-filter__item:last-child {
+  margin: 0px 0px 0px 0px;
+}
+
+.compare-filter__link {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #1ab9c9;
+}
+
+.compare-filter__link a {
+  text-decoration: underline;
+}
+
+.compare-filter__remove {
+  flex: 0 0 10px;
+  width: 10px;
+  z-index: 1000;
+  height: 10px;
+  background: url("../img/icons/filter/error2.png") 0 0 no-repeat;
+  margin: 1px 0px 0px 0px;
+}
+
+.compare-filter__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.compare-filter__botton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 33px;
+  background-color: #12aab8;
+  padding: 0px 13px;
+  border-radius: 18px;
+}
+
+.compare-filter__botton span {
+  background: url("../img/icons/filter/compare.png") left no-repeat;
+  padding: 0px 0px 0px 26px;
+  line-height: 33px;
+  display: inline-block;
+  margin: auto;
+  text-transform: uppercase;
+  color: #eaeaea;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.compare-filter__clean {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background: #eaeaea url("../img/icons/filter/trash.png") center no-repeat;
 }
 
 * {
@@ -1704,6 +1791,10 @@ body.lock {
 }
 
 @media (min-width: 911.98px) {
+  .compare-filter__remove:hover {
+    background: url("../img/icons/filter/error_h.png") 0 0 no-repeat;
+  }
+
   ._arrow:hover {
     background: url("../img/icons/header/left-arrow.svg") 0 0 no-repeat;
   }
